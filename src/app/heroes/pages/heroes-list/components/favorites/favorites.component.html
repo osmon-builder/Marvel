@@ -1,0 +1,14 @@
+<div class="favorites">
+    <h1>favorites</h1> 
+ </div>
+ <div *ngFor="let data of favHeroes">
+     <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px ; ">
+        <div
+        style="position: relative; width: 200px; height: 300px; background-image: url({{data?.comics.available}}.{{data?.comics.collectionURI}}); background-position: center ; background-repeat: no-repeat; background-size: cover; ">
+        <img src="assets/img/icons/btn-delete.png"
+            style="position: absolute; right: -15px; top: -15px; cursor: pointer;" (click)="deleteFavComic()">
+    </div>
+    <strong>{{data.title}}</strong>
+         
+     </div>
+ </div>
