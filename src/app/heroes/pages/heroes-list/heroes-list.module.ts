@@ -7,7 +7,7 @@ import { HeroesListComponent } from './heroes-list.component';
 import { HeroesService } from '../../services/heroes.service';
 import { FilterPipe } from '../../pipe/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FavoritesComponent } from './components/favorites/favorites.component';
+import { FavoritesComponent } from './components/favourites/favorites.component';
 import { ViewMoreComponent } from './components/view-more/view-more.component';
 
 

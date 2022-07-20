@@ -1,0 +1,17 @@
+<div class="favorites">
+    <div style="display: flex; flex-direction:row; align-items: center; justify-content:center">
+    <img style="padding: 10px;" src="../../../../../../assets/img/icons/favourites.png" alt="marvel">
+    <h1>My favorites</h1> 
+    </div>
+ </div>
+ <div *ngFor="let data of favHeroes">
+     <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px ; ">
+        <div class="favorite-image">
+            <img width="200px" height="300px" src="{{data.thumbnail.path + '.' + data.thumbnail.extension}}">
+        <img src="assets/img/icons/btn-delete.png"
+            style="position: absolute; right: -15px; top: -15px; cursor: pointer;" (click)="deleteFavComic(data)">
+    </div>
+    <strong>{{data.title}}</strong>
+         
+     </div>
+ </div>
