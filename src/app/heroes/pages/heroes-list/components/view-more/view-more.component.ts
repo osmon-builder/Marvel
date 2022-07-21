@@ -10,7 +10,7 @@ export class ViewMoreComponent  {
   
 
   public show = false;
-  @ViewChild('modalBack', {static:true, read: ElementRef}) modalBack !: ElementRef
+  @ViewChild('modalBack') modalBack !: ElementRef
   @Input() comic : any;
   @Output() closeDialog: EventEmitter<any> = new EventEmitter<any>()
 
