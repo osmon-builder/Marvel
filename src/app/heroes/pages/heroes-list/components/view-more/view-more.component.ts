@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-view-more',
@@ -7,24 +8,34 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ViewMoreComponent  {
   
-  public visible: boolean = false;
-  @Input() comic = [];
+
+  public show = false;
+  @ViewChild('modalBack', {static:true, read: ElementRef}) modalBack !: ElementRef
+  @Input() comic : any;
   @Output() closeDialog: EventEmitter<any> = new EventEmitter<any>()
 
-  constructor() { }
+
+  constructor( 
+    private renderer: Renderer2
+  ) { 
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if(this.modalBack && e.target === this.modalBack.nativeElement) {
+        this.show = false;
+        console.log('clicked')
+      }
+    })
+  }
 
   public toggleModal() {
-    this.visible = !this.visible;
+    this.show = true;
+    console.log(this.show)
   }
 
-  public onNoClick() {
-    this.visible = false;
-    this.closeDialog.emit()
-  }
 
   setComics() {
-    this.visible = false;
+    this.show = false;
     this.closeDialog.emit(this.comic)
   }
-
 }
+ 
+

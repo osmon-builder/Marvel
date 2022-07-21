@@ -10,6 +10,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FavoritesComponent } from './components/favourites/favorites.component';
 import { ViewMoreComponent } from './components/view-more/view-more.component';
 
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 const routes: Routes = [
   { path: "", component: HeroesListComponent },
@@ -28,8 +30,10 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
+    MatExpansionModule,
     RouterModule.forChild(routes)
   ],
   providers: [ HeroesService ],
+  entryComponents: [ ViewMoreComponent ]
 })
 export class HeroesListModule { }

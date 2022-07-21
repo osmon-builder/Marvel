@@ -16,9 +16,7 @@ export class FavoritesComponent implements OnInit {
   deleteFavComic(removeItem = []) {
     const index = this.favHeroes.indexOf(removeItem);
     this.favHeroes.splice(index, 1);
-    localStorage.setItem('data', JSON.stringify(this.favHeroes))
-    // localStorage.removeItem('data')
-    // this.favHeroes = JSON.parse(localStorage.getItem('data')!);
+    localStorage.setItem('data', JSON.stringify(this.favHeroes));
   }
 
 }
