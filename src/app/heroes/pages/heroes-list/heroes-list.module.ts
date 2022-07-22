@@ -7,7 +7,7 @@ import { HeroesListComponent } from './heroes-list.component';
 import { HeroesService } from '../../services/heroes.service';
 import { FilterPipe } from '../../pipe/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FavoritesComponent } from './components/favourites/favorites.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 import { ViewMoreComponent } from './components/view-more/view-more.component';
 
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -22,7 +22,7 @@ const routes: Routes = [
   declarations: [
     HeroesListComponent,
     FilterPipe,
-    FavoritesComponent,
+    FavouritesComponent,
     ViewMoreComponent
   ],
   imports: [

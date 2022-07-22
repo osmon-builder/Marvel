@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-favorites',
-  templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.scss']
+  templateUrl: './favourites.component.html',
+  styleUrls: ['./favourites.component.scss']
 })
-export class FavoritesComponent implements OnInit {
+export class FavouritesComponent implements OnInit {
 
   @Input() favHeroes : any [] = [];
   constructor() { }

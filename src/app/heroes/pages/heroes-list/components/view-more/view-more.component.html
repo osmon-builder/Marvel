@@ -9,9 +9,9 @@
                 <img width="100%" height="90%" src="{{comic?.thumbnail.path}}.{{comic?.thumbnail.extension}}">
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <strong style="font-size:large; text-align: center;">{{comic.title}}</strong>
-                <div class="contenedor">
-                    <p style=" text-align: justify;">{{comic.description ? comic.description : 'No existe una descripción para este comic'}}</p>
+                <strong style="font-size:large; text-align: center;">{{comic.title ? comic.title : comic.name}}</strong>
+                <div class="modalc__contenedor">
+                    <p style=" text-align: justify; margin-top: 10px;">{{comic.description ? comic.description : 'No existe una descripción para este comic'}}</p>
                 </div>
             </div>
         </div>
@@ -19,11 +19,11 @@
             <div (click)=" setComics()"
                 class="modalc__footer__button modalc__footer__button--fav  modalc__footer__button--fav--buy">
                 <div class=" modalc__footer__button__icon add"></div>
-                Agregar a favoritos
+                ADDED TO FAVOURITES
             </div>
             <div class="modalc__footer__button modalc__footer__button--buy">
-                <div class=" modalc__footer__button__icon buy"></div>
-                comprar ahora
+                <div  class=" modalc__footer__button__icon buy"></div>
+                BUY FOR $3.99
             </div>
         </div>
     </div>

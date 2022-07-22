@@ -12,7 +12,7 @@ import { ViewMoreComponent } from './components/view-more/view-more.component';
 })
 export class HeroesListComponent implements OnInit, AfterViewInit, AfterViewChecked  {
 
-  // @ViewChild("viewMore", { read: ViewContainerRef }) viewMoreContainer: ViewContainerRef
+
   
   public hero = [] ;
   public page: number = 1;
@@ -55,8 +55,6 @@ export class HeroesListComponent implements OnInit, AfterViewInit, AfterViewChec
         this.hero.forEach((element: { items: any; }) => {
           this.comicsData = this.comicsData.concat(element.items)
         });
-        console.log(this.hero)
-        console.log(this.comicsData)
       });
       this.ramdonComics();
   }
@@ -66,8 +64,6 @@ export class HeroesListComponent implements OnInit, AfterViewInit, AfterViewChec
       this.isLoading = false;
     }, 1000);
     
-   
-
     this.simpleViewMore = this.viewMoreContainer.createComponent(ViewMoreComponent);
     this.simpleViewMore.instance.closeDialog.pipe(
       filter((comic) => !!comic),

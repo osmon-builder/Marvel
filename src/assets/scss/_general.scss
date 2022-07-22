@@ -9,7 +9,8 @@ $gray: #ebebeb;
 $grayLight : #cccccc;
 $grayDark: #444444;
 $white: #ffffff;
-$red : #E2474B;
+$red : #f7171f;
+$redfav : #E2474B;
 $redAlert : #f8d7d9;
 $greenSuccess : #155724;
 $size24: 1.5rem;
@@ -18,6 +19,7 @@ $size30: 1.875rem;
 $size40: 2.5rem;
 $size50: 3.125rem;
 $favourites:#ebebeb;
+$addFav:#ffffff;
 
 #Buscador {
   background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
@@ -31,12 +33,17 @@ $favourites:#ebebeb;
 }
 
 .description {
+  position: relative;
   height: 160px;
   width: 100%;
   margin: 10px 0;
-  overflow:auto;
+  overflow:none;
   box-sizing: border-box;
   padding:0 1rem;
+  @media screen and (max-width: 768px) {
+   text-align: justify;
+ 
+  }
 
 }
 
@@ -45,16 +52,43 @@ $favourites:#ebebeb;
   height: 150px;
   height: auto;
   margin: 0 auto;
-  // position: absolute;
-  // left: -15px;
-  // top: -40px;
-  & img{
+  position: relative;
+  & img{  
+    position: absolute;
+    left: -15px;
+    top: -30px;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    max-height: 150px ;
+    box-shadow: 3px 3px 3px #555454;
+    @media screen and (max-width: 768px) {
+      position: relative;
+    }
+  
+    }
   }  
-}
+
+  .heroes-name{
+    font-size: 1rem;
+    left: 100%;
+    @media screen and (max-width: 768px) {
+      margin-left: 10px;
+    }
+  }
+
+.favourites{
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    width: 5px;
+    height: 70px;
+    padding-left: 40px;
+    margin: 5px;
+  }
 
 .favourite-image{
         position: relative; 
@@ -66,7 +100,7 @@ $favourites:#ebebeb;
 }
 
 
-.character{
+.characters{
   background-image: url('../img/icons/characters.png'); 
   background-size: 30px 30px;
   background-position: right;
@@ -80,17 +114,7 @@ $favourites:#ebebeb;
 }
 
 
-.favourites{
-  background-size: 30px 30px;
-  background-position: center;
-  background-repeat: no-repeat;
-  align-items: center;
-  display: flex;
-  width: 5px;
-  height: 70px;
-  padding-left: 40px;
-  margin: 5px;
-}
+
 
 .loader{
   position: fixed;
@@ -330,7 +354,6 @@ $favourites:#ebebeb;
 .u-btn {
   padding: 10px 25px;
   margin: 0px 0;
-  border-radius: 5px;
   transition: background-color 0.3s linear;
   outline: none;
   border: none;
@@ -342,21 +365,30 @@ $favourites:#ebebeb;
       text-decoration: underline ;
       color: $white;
     } 
+  }&--rondom{
+    border-radius: 5px;
+    background-color: $red;
+    color: $white;
   }
 
-  // @media only screen and (max-width: 600px) {
-  //   .images {
-  //     position: none !important;
-  //     left: 0;
-  //     top: 0;
-  //   }
-  // }
 
+ 
+  }
   
   
 
-  
-  
-
+  .related-comic{
+    color: gray;
+    padding: 5px;
+ }
+ .related-comic:hover,
+ .related-comic:focus{
+   color:$red;
+    background:url('../img/icons/link-arrow.png');
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 30px;  
+    cursor: pointer;
 }
 

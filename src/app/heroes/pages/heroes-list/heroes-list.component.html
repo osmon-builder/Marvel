@@ -1,7 +1,7 @@
 <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="row bg-header">
-        <div class="col-lg-2 col-md-2 col-xs-12 col-sm-2 d-flex a-item-center">
-            <img src="assets/img/icons/logoM.png" style="height: 50px;">
+        <div style="padding: 5px 0 5px 20px;" class="col-lg-2 col-md-2 col-xs-12 col-sm-2 d-flex a-item-center">
+            <img  src="assets/img/icons/logoM.png" style="height: 50px;">
         </div>
         <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 d-flex a-item-center">
             <input  type="search" placeholder="Search..." id="Buscador" [(ngModel)]="filter" />
@@ -16,13 +16,13 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-            <div class="character" style="justify-content: space-between;">
+            <div class="characters" style="justify-content: space-between;">
                 <h1>Charaters</h1>
              
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <button class="u-btn u-btn--view-more" style="float: right;" (click)="ramdonComics()">+ 3 Random
+                    <button class="u-btn u-btn--rondom" style="float: right;" (click)="ramdonComics()"> 3 Random
                         comics</button>
                 </div>
             </div>
@@ -38,17 +38,17 @@
                                 </div>    
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <strong style="left: 100% ;">{{heroes.name}}</strong>
+                                <strong class="heroes-name" >{{heroes.name}}</strong>
                                 <div class="description">
                                    
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
                                             <p style="max-height: 80px ; overflow: hidden;"
                                             >{{heroes.description? heroes.description : 'No descripción'}}</p>
                                         </div>
 
                                    
                                     <button class="u-btn u-btn--view-more"
-                                    (click)="openViewMore(heroes)">
+                                    (click)="openViewMore(heroes)" >
                                         VIEW
                                         MORE</button>
                                 </div>
@@ -61,13 +61,14 @@
                                     <mat-expansion-panel  class="mat-elevation-z0" >
                                         <mat-expansion-panel-header>
                                             <mat-panel-title>                                                     
-                                                <h3>Related comics</h3>
+                                                <h3 style="color: grey ;flex-direction: row;;">Related comics</h3>
                                             </mat-panel-title>
-                                        </mat-expansion-panel-header>
-                                        <ul  class="related-comic" class="col-lg-12" *ngFor="let comic of heroes?.items"
-                                        [ngClass]="{ hideChildren : false }">                               
-                                            <li (click)="openViewMore(comic)">{{comic.name}}</li>       
-                                        </ul>
+                                        </mat-expansion-panel-header >
+                                        <div  class="row justify-content-center">
+                                        <div  class="col-lg-6 col-md-6 col-sm-12 col-xs-12;" *ngFor="let comic of heroes.items" >                               
+                                            <div class="related-comic" (click)="openViewMore(comic)" >{{comic.name}}</div>       
+                                        </div>
+                                        </div>
                                     </mat-expansion-panel>
                                 </mat-accordion>
                                 
